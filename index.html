@@ -127,25 +127,25 @@
 
   .spec-table { border-top: 1px solid var(--line); }
   .spec-row {
-    display: grid; grid-template-columns: 160px 1fr 200px 140px; gap: 20px; align-items: start;
+    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 24px;
     padding: 26px 0; border-bottom: 1px solid var(--line);
+    cursor: pointer; border-radius: 4px; transition: background 0.15s ease, box-shadow 0.15s ease;
   }
-  @media (max-width: 780px) {
-    .spec-row { grid-template-columns: 1fr; gap: 6px; }
-    .spec-row > div:empty { display: none; }
-  }
-  .spec-row .tier { font-family: "Sora"; font-weight: 700; font-size: 1.1rem; }
+  .spec-row > div:empty { display: none; }
+  .spec-row .tier { flex: 1 1 180px; min-width: 0; font-family: "Sora"; font-weight: 700; font-size: 1.1rem; overflow-wrap: break-word; }
   .spec-row .tier .drone-tag { display: block; font-family: "JetBrains Mono"; font-size: 0.72rem; color: var(--accent); margin-top: 6px; }
-  .spec-row ul { list-style: none; margin: 0; padding: 0; }
-  .spec-row li { font-size: 0.94rem; color: var(--ink-soft); padding: 3px 0; }
+  .spec-row ul { flex: 2 1 260px; min-width: 0; list-style: none; margin: 0; padding: 0; }
+  .spec-row li { font-size: 0.94rem; color: var(--ink-soft); padding: 3px 0; overflow-wrap: break-word; }
   .spec-row li::before { content: "— "; color: var(--line); }
-  .spec-row .price { font-family: "JetBrains Mono"; font-size: 1.3rem; text-align: right; }
-  @media (max-width: 780px) { .spec-row .price { text-align: left; } }
+  .spec-row .price { flex: 0 0 auto; min-width: 100px; margin-left: auto; font-family: "JetBrains Mono"; font-size: 1.3rem; text-align: right; }
+  @media (max-width: 780px) {
+    .spec-row { flex-direction: column; gap: 6px; }
+    .spec-row .price { text-align: left; margin-left: 0; }
+  }
   .spec-row .price small { display: block; font-size: 0.7rem; color: var(--ink-soft); font-weight: 400; margin-top: 4px; }
-  .spec-row { cursor: pointer; border-radius: 4px; transition: background 0.15s ease, box-shadow 0.15s ease; }
   .spec-row:hover, .spec-row:focus-visible { background: color-mix(in srgb, var(--accent) 6%, transparent); margin: 0 -16px; padding: 26px 16px; }
   .spec-row.selected { background: color-mix(in srgb, var(--accent) 9%, transparent); box-shadow: inset 3px 0 0 var(--accent); margin: 0 -16px; padding: 26px 16px 26px 13px; }
-  .recommended-tag { font-family: "JetBrains Mono"; font-size: 0.68rem; color: var(--signal); margin-left: 8px; }
+  .recommended-tag { display: block; font-family: "JetBrains Mono"; font-size: 0.68rem; color: var(--signal); margin-top: 2px; }
 
   .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
   @media (max-width: 860px) { .process { grid-template-columns: 1fr 1fr; } }
@@ -295,7 +295,7 @@
           <div class="price">R$100<small>– R$200</small></div>
         </div>
         <div class="spec-row" tabindex="0">
-          <div class="tier">Intermediário<span class="recommended-tag">recomendado</span><span class="drone-tag">DJI Mavic 4 Pro</span></div>
+          <div class="tier">Intermediário<span class="drone-tag">DJI Mavic 4 Pro</span><span class="recommended-tag">recomendado</span></div>
           <ul>
             <li>Vídeo aéreo de até 2 minutos, editado</li>
             <li>Fotos em alta resolução incluídas</li>
