@@ -142,7 +142,10 @@
   .spec-row .price { font-family: "JetBrains Mono"; font-size: 1.3rem; text-align: right; }
   @media (max-width: 780px) { .spec-row .price { text-align: left; } }
   .spec-row .price small { display: block; font-size: 0.7rem; color: var(--ink-soft); font-weight: 400; margin-top: 4px; }
-  .spec-row.featured { background: color-mix(in srgb, var(--accent) 5%, transparent); margin: 0 -24px; padding: 26px 24px; border-radius: 4px; }
+  .spec-row { cursor: pointer; border-radius: 4px; transition: background 0.15s ease, box-shadow 0.15s ease; }
+  .spec-row:hover, .spec-row:focus-visible { background: color-mix(in srgb, var(--accent) 6%, transparent); margin: 0 -16px; padding: 26px 16px; }
+  .spec-row.selected { background: color-mix(in srgb, var(--accent) 9%, transparent); box-shadow: inset 3px 0 0 var(--accent); margin: 0 -16px; padding: 26px 16px 26px 13px; }
+  .recommended-tag { font-family: "JetBrains Mono"; font-size: 0.68rem; color: var(--signal); margin-left: 8px; }
 
   .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
   @media (max-width: 860px) { .process { grid-template-columns: 1fr 1fr; } }
@@ -282,7 +285,7 @@
         <span class="section-index mono">01 / PRICING</span>
       </div>
       <div class="spec-table">
-        <div class="spec-row">
+        <div class="spec-row" tabindex="0">
           <div class="tier">Básico<span class="drone-tag">DJI Mini 3</span></div>
           <ul>
             <li>Ideal para imóveis pequenos e médios</li>
@@ -291,8 +294,8 @@
           <div></div>
           <div class="price">R$100<small>– R$200</small></div>
         </div>
-        <div class="spec-row featured">
-          <div class="tier">Intermediário<span class="drone-tag">DJI Mavic 4 Pro</span></div>
+        <div class="spec-row" tabindex="0">
+          <div class="tier">Intermediário<span class="recommended-tag">recomendado</span><span class="drone-tag">DJI Mavic 4 Pro</span></div>
           <ul>
             <li>Vídeo aéreo de até 2 minutos, editado</li>
             <li>Fotos em alta resolução incluídas</li>
@@ -300,7 +303,7 @@
           <div></div>
           <div class="price">R$300<small>– R$600</small></div>
         </div>
-        <div class="spec-row">
+        <div class="spec-row" tabindex="0">
           <div class="tier">Premium<span class="drone-tag">DJI Mavic 4 Pro</span></div>
           <ul>
             <li>Cobertura completa de eventos</li>
@@ -438,6 +441,19 @@
       });
     });
   }
+
+  const specRows = document.querySelectorAll('.spec-row');
+  specRows.forEach(row => {
+    function toggleSelect() {
+      const wasSelected = row.classList.contains('selected');
+      specRows.forEach(r => r.classList.remove('selected'));
+      if (!wasSelected) row.classList.add('selected');
+    }
+    row.addEventListener('click', toggleSelect);
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSelect(); }
+    });
+  });
 
   const PRICES = {
     imovel:        { drone1: { curta: [100,150], media: [150,220], dia: [250,350] }, drone2: { curta: [250,350], media: [350,500], dia: [500,700] } },
