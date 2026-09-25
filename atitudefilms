@@ -1,0 +1,197 @@
+# Projeto Landing Pages com IA — Caderno de Estudo
+
+**Data de início:** 25/09/2026  
+**Objetivo:** Aprender a construir e monetizar landing pages para negócios locais, usando IA como ferramenta de produção.
+
+---
+
+## 📚 MÓDULO 1 — FUNDAMENTOS
+
+### 1.1 O que é uma landing page (LP)
+Uma página única, focada em conversão. Não é site institucional com várias páginas — é uma página que faz o visitante tomar **uma ação específica**: chamar no WhatsApp, preencher formulário, ligar.
+
+**Elementos essenciais de uma LP:**
+- **Hero**: primeira dobra, com promessa clara e botão de ação.
+- **Prova social**: galeria, depoimentos, números.
+- **Oferta**: pacotes, preços, o que está incluído.
+- **Processo**: como funciona, passo a passo.
+- **Ferramenta**: simulador, calculadora, algo interativo.
+- **Contato**: canais diretos (WhatsApp, Instagram, e-mail).
+
+### 1.2 Por que LP vende para negócios locais
+- Pequenos negócios têm Instagram, mas não têm site.
+- Link na bio do Instagram não converte bem.
+- Uma LP com simulador e WhatsApp integrado **converte mais** que Instagram sozinho.
+- Você cobra pelo trabalho e entrega algo que **traz dinheiro** para o cliente.
+
+### 1.3 Quanto cobrar (mercado brasileiro, 2026)
+
+| Faixa | Preço | Perfil |
+|-------|-------|--------|
+| Iniciante (primeiro cliente) | R$ 500–800 | Em troca de depoimento |
+| Freelancer com portfólio | R$ 800–2.000 | Template customizado |
+| LP funcional (com simulador) | R$ 1.500–3.000 | Automação de conversão |
+| Agência | R$ 3.000–8.000 | Copy + testes A/B |
+
+**Regra de ouro:** o primeiro cliente não é para lucrar. É para você ter **prova social**. Depois, o preço sobe.
+
+---
+
+## 🛠️ MÓDULO 2 — FERRAMENTAS
+
+### 2.1 Stack técnica
+- **HTML + CSS + JavaScript** puro (sem framework).
+- **Fontes**: Sora (títulos), Inter (corpo), JetBrains Mono (dados).
+- **Design system**: variáveis CSS (`--ink`, `--accent`, `--signal`).
+- **Dark mode**: automático via `prefers-color-scheme` + manual via `data-theme`.
+
+### 2.2 Estrutura do código
+
+### 2.3 Hospedagem
+- **Vercel** (gratuita): publica em segundos, aceita upload de pasta inteira.
+- **Netlify** (gratuita): alternativa, mesmo fluxo.
+- **Domínio próprio**: opcional, ~R$ 40/ano no Registro.br.
+
+### 2.4 Ferramentas auxiliares
+- **HandBrake**: comprimir vídeos para o hero.
+- **FFmpeg**: extrair poster de vídeo, comprimir em lote.
+- **VS Code**: editor de código.
+- **GitHub**: versionamento (opcional no início).
+
+---
+
+## 🎯 MÓDULO 3 — ESTRATÉGIA DE NEGÓCIO
+
+### 3.1 Duas rotas de monetização
+
+**Rota A — Serviço** (fazer sites para clientes)
+- Ticket: R$ 800–2.500 por projeto.
+- Vantagem: dinheiro rápido, aprende com clientes.
+- Desvantagem: tempo é o limite.
+
+**Rota B — Produto** (vender templates)
+- Ticket: R$ 50–200 por licença.
+- Vantagem: escala.
+- Desvantagem: precisa de audiência.
+
+**Recomendação para iniciante:** comece pela Rota A. Depois use o que aprendeu para criar a Rota B.
+
+### 3.2 Plano de 30 dias (Rota A)
+
+**Semana 1 — Preparar oferta**
+- Publicar o site na Vercel.
+- Tirar prints (desktop + mobile).
+- Escrever frase de venda.
+- Criar portfólio simples (Notion, PDF, ou GitHub Pages).
+
+**Semana 2 — Prospecção**
+- Escolher 1 nicho.
+- Listar 30 negócios.
+- Mandar 5 mensagens/dia.
+- Objetivo: gerar resposta, não fechar.
+
+**Semana 3 — Primeiro cliente**
+- Mostrar o exemplo ao vivo.
+- Oferecer preço de entrada (R$ 500).
+- Fechar, entregar, pedir depoimento.
+
+**Semana 4 — Repetir e ajustar**
+- Com depoimento, subir preço.
+- Prospectar mais 30 negócios.
+- Anotar o que funcionou.
+
+### 3.3 Script de prospecção (base)
+> "Oi, vi seu trabalho no Instagram e curti. Notei que você não tem site — só link na bio. Eu monto landing pages com simulador de orçamento que manda direto pro seu WhatsApp. Posso te mostrar um exemplo pronto? Sem compromisso."
+
+**O que funciona:** personalização (cite algo específico do perfil), foco no benefício (não no site), oferta de demonstração.
+
+---
+
+## 🧩 MÓDULO 4 — REUTILIZAÇÃO E ESCALA
+
+### 4.1 Clonagem por nicho
+O mesmo HTML pode virar sites para nichos diferentes, mudando:
+- **Nome da marca**
+- **Conteúdo** (textos, imagens, pacotes)
+- **Cores** (`--accent` e `--signal`)
+- **Campos do simulador** (tipos de serviço)
+- **Objeto `PRICES`** (valores)
+
+### 4.2 Estrutura de fragmentos (avançado)
+Em vez de 1 HTML monolítico, quebrar em pedaços reutilizáveis:
+- 4 variações de hero × 3 variações de pacotes × 3 de galeria = 36 combinações.
+- Isso permite criar sites diferentes sem começar do zero.
+
+### 4.3 Checklist de personalização (para cada cliente)
+1. Trocar nome da marca (title, brand, footer).
+2. Trocar cidade de atuação.
+3. Ajustar pacotes + objeto PRICES.
+4. Trocar WhatsApp, Instagram, e-mail.
+5. Trocar `--accent`/`--signal` se quiser outra cor.
+6. Substituir galeria por fotos reais.
+7. Colocar vídeo do hero em `/videos/hero.mp4`.
+8. Criar imagem `/preview.jpg` (1200×630) para og:image.
+
+---
+
+## ✍️ EXERCÍCIOS PRÁTICOS
+
+### Exercício 1 — Publicar um site
+Pegue o HTML da Altitude Filmes, crie a pasta `videos/`, coloque o vídeo, e publique na Vercel. Objetivo: ter um link funcional.
+
+### Exercício 2 — Adaptar para segundo nicho
+Escolha um nicho diferente (fotógrafo, personal trainer, tatuador). Adapte:
+- Nome, cores, textos.
+- Pacotes e objeto PRICES.
+- Campos do simulador.
+
+Objetivo: ter dois exemplos de portfólio.
+
+### Exercício 3 — Escrever o pitch
+Escreva 3 versões da mensagem de prospecção, uma para cada nicho. Teste com amigos antes de mandar para clientes reais.
+
+### Exercício 4 — Simular uma venda
+Escreva como você responderia a estas objeções:
+- "Está caro."
+- "Já tenho Instagram, para que site?"
+- "Vou pensar."
+
+### Exercício 5 — Documentar um projeto
+Escolha um projeto seu e crie um `README.md` com: o que faz, como rodar, estrutura, status.
+
+---
+
+## 📌 PRÓXIMOS PASSOS (marque conforme avança)
+
+- [ ] Publicar o site da Altitude Filmes na Vercel
+- [ ] Adicionar vídeo do hero
+- [ ] Testar simulador em produção
+- [ ] Adaptar para um segundo nicho
+- [ ] Criar portfólio com 2 exemplos
+- [ ] Escrever pitch de prospecção
+- [ ] Listar 30 negócios do nicho escolhido
+- [ ] Enviar 5 mensagens/dia por 1 semana
+- [ ] Fechar o primeiro cliente
+- [ ] Documentar o aprendizado do primeiro projeto
+
+---
+
+## 📝 ANOTAÇÕES PESSOAIS
+
+(Use este espaço para registrar o que funcionou, o que não funcionou, dúvidas, e aprendizados a cada etapa.)
+
+### Semana 1
+- 
+
+### Semana 2
+- 
+
+### Semana 3
+- 
+
+### Semana 4
+- 
+
+---
+
+*Documento criado em 25/09/2026. Atualizar conforme avanço.*
