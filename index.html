@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Altitude Filmes — Captação aérea para eventos</title>
-<meta name="description" content="Fotografia e vídeo aéreo com drone para casamentos, eventos corporativos e shows no Rio de Janeiro. Operação regularizada, entrega em 24–48h.">
-<meta property="og:title" content="Altitude Filmes — Captação aérea para eventos">
-<meta property="og:description" content="Fotografia e vídeo aéreo com drone para eventos no Rio de Janeiro. Orçamento na hora.">
+<title>Altitude Filmes — Captação aérea</title>
+<meta name="description" content="Fotografia e vídeo aéreo com drone no Rio de Janeiro. Imóveis, eventos e institucional. Operação regularizada, entrega em 24–48h.">
+<meta property="og:title" content="Altitude Filmes — Captação aérea">
+<meta property="og:description" content="Fotografia e vídeo aéreo com drone no Rio de Janeiro. Orçamento na hora.">
 <meta property="og:image" content="/preview.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,10 +179,9 @@
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); }
   @media (max-width: 780px) { .gallery { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }
-  .frame { aspect-ratio: 4/3; overflow: hidden; background: var(--paper-raise); position: relative; display: flex; align-items: center; justify-content: center; }
+  .frame { aspect-ratio: 4/3; overflow: hidden; background: var(--paper-raise); position: relative; }
   .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .frame .coord { position: absolute; bottom: 8px; left: 10px; font-family: "JetBrains Mono"; font-size: 0.62rem; color: rgba(255,255,255,0.7); }
-  .frame.placeholder { color: var(--ink-soft); font-family: "JetBrains Mono"; font-size: 0.75rem; text-align: center; padding: 12px; }
 
   .calc { background: var(--paper-raise); border: 1px solid var(--line); border-radius: 6px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
   @media (max-width: 780px) { .calc { grid-template-columns: 1fr; padding: 26px; } }
@@ -219,9 +218,8 @@
      3. Ajustar a spec-table de pacotes + o objeto PRICES no script
      4. Trocar WhatsApp (2 lugares), Instagram e e-mail
      5. Trocar --accent/--signal no :root se quiser outra cor de marca
-     6. Substituir os frames da galeria por fotos reais quando tiver
-     7. Colocar o vídeo do hero em /videos/hero.mp4 (arquivo real, não base64)
-     8. Colocar uma imagem /preview.jpg (1200x630) para og:image
+     6. Fotos da galeria em /fotos/ e vídeo do hero em /videos/hero.mp4
+     7. Colocar uma imagem /preview.jpg (1200x630) para og:image
 ================================================================== -->
 
 <header>
@@ -265,9 +263,9 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap" style="display:contents;">
       <div>
-        <span class="kicker mono">captação aérea · eventos · Rio de Janeiro</span>
-        <h1>O registro aéreo que o seu evento merece.</h1>
-        <p class="lead">Fotografia e vídeo com drone para casamentos, eventos corporativos e shows. Operação regularizada, entrega em 24–48h.</p>
+        <span class="kicker mono">captação aérea · Rio de Janeiro</span>
+        <h1>Registro aéreo de precisão para imóveis, eventos e marcas.</h1>
+        <p class="lead">Fotografia e vídeo com drone, do enquadramento ao arquivo final entregue. Operação regularizada, entrega rápida.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#orcamento">simular orçamento →</a>
           <a class="btn btn-ghost" href="https://wa.me/5521964852024" target="_blank" rel="noopener">falar no whatsapp</a>
@@ -289,7 +287,6 @@
       </div>
       <div class="hero-panel">
         <div class="hero-photo">
-          <!-- Suba o vídeo real como arquivo em /videos/hero.mp4 (Vercel serve arquivos da pasta /public direto) -->
           <video src="/videos/hero.mp4" autoplay muted loop playsinline poster="/videos/hero-poster.jpg"></video>
           <div class="hero-scrim"></div>
           <div class="hero-overlay">
@@ -306,36 +303,36 @@
   <section id="pacotes">
     <div class="wrap">
       <div class="section-head">
-        <div><h2>Pacotes</h2><p class="section-sub">Três níveis de cobertura aérea para o seu evento — do registro essencial à produção completa.</p></div>
+        <div><h2>Pacotes</h2><p class="section-sub">Três níveis de entrega — ajuste valores e itens para o que o cliente cobra.</p></div>
         <span class="section-index mono">01 / PREÇOS</span>
       </div>
       <div class="spec-table">
         <div class="spec-row" tabindex="0">
-          <div class="tier">Essencial<span class="drone-tag">DJI Mini 3</span></div>
+          <div class="tier">Básico<span class="drone-tag">DJI Mini 3</span></div>
           <ul>
-            <li>Ideal para eventos intimistas e pré-wedding</li>
-            <li>Até 1 hora de voo + 15 fotos tratadas</li>
+            <li>Ideal para imóveis pequenos e médios</li>
+            <li>Até 15 fotos aéreas tratadas</li>
           </ul>
           <div></div>
-          <div class="price">R$400<small>– R$600</small></div>
+          <div class="price">R$100<small>– R$200</small></div>
         </div>
         <div class="spec-row" tabindex="0">
           <div class="tier">Intermediário<span class="drone-tag">DJI Mavic 4 Pro</span><span class="recommended-tag">recomendado</span></div>
           <ul>
-            <li>Vídeo aéreo editado de até 2 minutos</li>
-            <li>Fotos em alta resolução + making of</li>
+            <li>Vídeo aéreo de até 2 minutos, editado</li>
+            <li>Fotos em alta resolução incluídas</li>
           </ul>
           <div></div>
-          <div class="price">R$800<small>– R$1.200</small></div>
+          <div class="price">R$300<small>– R$600</small></div>
         </div>
         <div class="spec-row" tabindex="0">
           <div class="tier">Premium<span class="drone-tag">DJI Mavic 4 Pro</span></div>
           <ul>
-            <li>Cobertura completa de casamento ou evento corporativo</li>
-            <li>Vídeo institucional + entrega expressa</li>
+            <li>Cobertura completa de eventos</li>
+            <li>Vídeo institucional / corporativo</li>
           </ul>
           <div></div>
-          <div class="price">R$1.500<small>– R$3.000+</small></div>
+          <div class="price">R$800<small>+</small></div>
         </div>
       </div>
     </div>
@@ -348,7 +345,7 @@
         <span class="section-index mono">02 / PROCESSO</span>
       </div>
       <div class="process">
-        <div class="step"><div class="num">01</div><h3>Contato</h3><p>Descrição do evento, local e data.</p></div>
+        <div class="step"><div class="num">01</div><h3>Contato</h3><p>Descrição do local e do objetivo do trabalho.</p></div>
         <div class="step"><div class="num">02</div><h3>Orçamento</h3><p>Simulação no site ou proposta fechada pelo WhatsApp.</p></div>
         <div class="step"><div class="num">03</div><h3>Voo</h3><p>Operação regularizada, no horário combinado.</p></div>
         <div class="step"><div class="num">04</div><h3>Entrega</h3><p>Fotos e vídeos editados em alta resolução.</p></div>
@@ -359,14 +356,19 @@
   <section id="galeria">
     <div class="wrap">
       <div class="section-head">
-        <div><h2>Galeria</h2><p class="section-sub">Substitua pelos trabalhos reais assim que tiver.</p></div>
+        <div><h2>Galeria</h2><p class="section-sub">Trabalhos recentes.</p></div>
         <span class="section-index mono">03 / FOTOS</span>
       </div>
-      <!-- Troque cada .frame abaixo por: <div class="frame"><img src="/fotos/trabalho1.jpg" alt="..."></div> -->
       <div class="gallery">
-        <div class="frame placeholder">foto real aqui<br>(casamento)</div>
-        <div class="frame placeholder">foto real aqui<br>(evento corporativo)</div>
-        <div class="frame placeholder">foto real aqui<br>(show)</div>
+        <div class="frame">
+          <img src="/fotos/galeria-1.jpg" alt="Vista aérea de praça à beira-rio">
+        </div>
+        <div class="frame">
+          <img src="/fotos/galeria-2.jpg" alt="Vista aérea de ponte sobre o rio">
+        </div>
+        <div class="frame">
+          <img src="/fotos/galeria1.jpg" alt="Detalhe aéreo de rua e edificações">
+        </div>
       </div>
     </div>
   </section>
@@ -374,17 +376,17 @@
   <section id="orcamento">
     <div class="wrap">
       <div class="section-head">
-        <div><h2>Simule seu orçamento</h2><p class="section-sub">Tipo de evento, drone e duração — faixa estimada na hora.</p></div>
+        <div><h2>Simule seu orçamento</h2><p class="section-sub">Tipo de trabalho, drone e duração — faixa estimada na hora.</p></div>
         <span class="section-index mono">04 / ORÇAMENTO</span>
       </div>
       <div class="calc">
         <div>
           <div class="field">
-            <label for="tipo">Tipo de evento</label>
+            <label for="tipo">Tipo de trabalho</label>
             <select id="tipo">
-              <option value="casamento">Casamento</option>
-              <option value="corporativo">Evento corporativo</option>
-              <option value="show">Show / festival</option>
+              <option value="imovel">Imóvel</option>
+              <option value="evento">Evento</option>
+              <option value="institucional">Institucional / corporativo</option>
             </select>
           </div>
           <div class="field">
@@ -472,12 +474,12 @@
   });
 
   const PRICES = {
-    casamento:    { drone1: { curta: [400,600], media: [600,900], dia: [900,1400] }, drone2: { curta: [800,1200], media: [1200,1800], dia: [1800,3000] } },
-    corporativo:  { drone1: { curta: [500,700], media: [700,1000], dia: [1000,1500] }, drone2: { curta: [900,1300], media: [1300,2000], dia: [2000,3500] } },
-    show:         { drone1: { curta: [600,900], media: [900,1300], dia: [1300,2000] }, drone2: { curta: [1000,1500], media: [1500,2500], dia: [2500,4000] } },
+    imovel:        { drone1: { curta: [100,150], media: [150,220], dia: [250,350] }, drone2: { curta: [250,350], media: [350,500], dia: [500,700] } },
+    evento:        { drone1: { curta: [150,220], media: [220,350], dia: [400,600] }, drone2: { curta: [350,500], media: [500,800], dia: [800,1400] } },
+    institucional: { drone1: { curta: [180,260], media: [260,400], dia: [450,650] }, drone2: { curta: [400,600], media: [600,1000], dia: [1000,2000] } },
   };
   const LABELS = {
-    tipo: { casamento: "casamento", corporativo: "evento corporativo", show: "show / festival" },
+    tipo: { imovel: "imóvel", evento: "evento", institucional: "trabalho institucional" },
     drone: { drone1: "DJI Mini 3", drone2: "DJI Mavic 4 Pro" },
     duracao: { curta: "até 1 hora", media: "de 1 a 3 horas", dia: "dia inteiro" },
   };
